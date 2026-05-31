@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle
+import re
 
 # Load model
 model = pickle.load(open("spam_model.pkl", "rb"))
@@ -62,15 +63,40 @@ if st.button("Check Message"):
     else:
 
         with st.spinner("Analyzing message with AI..."):
+            # Detect suspicious links
+            suspicious_links = re.findall(r'(https?://\S+|www\.\S+)', message)
+
+            phishing_words = [
+                "login",
+                "verify",
+                "bank",
+                "claim",
+                "reward",
+                "winner",
+                "free",
+                "urgent",
+                "click"
+           ]
+
+            phishing_detected = False
+
+            for word in phishing_words:
+              if word.lower() in message.lower():
+                 phishing_detected = True
 
             prediction = model.predict([message])
 
             probability = model.predict_proba([message])
 
             confidence = round(max(probability[0]) * 100, 2)
+            
+            if suspicious_links:
+                st.warning("⚠ Suspicious Link Detected!")
+
+            if phishing_detected:
+                st.warning("⚠ Possible Phishing Attempt!")
 
             if prediction[0] == 1:
-
                 st.markdown(f"""
                     <div style="
                     background: linear-gradient(90deg,#ff4b2b,#ff416c);
