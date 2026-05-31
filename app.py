@@ -89,14 +89,33 @@ if st.button("Check Message"):
             probability = model.predict_proba([message])
 
             confidence = round(max(probability[0]) * 100, 2)
-            
+            # Risk Level Logic
+            risk_level = "SAFE"
+            risk_color = "green"
+
+            if prediction[0] == 1 and confidence > 80:
+                risk_level = "DANGEROUS"
+                risk_color = "red"
+
+            elif phishing_detected or suspicious_links:
+                    risk_level = "SUSPICIOUS"
+                    risk_color = "orange"
+
+            # Warning Messages
+            if suspicious_links:
+                    st.warning("⚠ Suspicious Link Detected!")
+
+            if phishing_detected:
+                st.warning("⚠ Possible Phishing Attempt!")
+
+
             if suspicious_links:
                 st.warning("⚠ Suspicious Link Detected!")
 
             if phishing_detected:
                 st.warning("⚠ Possible Phishing Attempt!")
 
-            if prediction[0] == 1:
+            if prediction[0] == 1 or phishing_detected:
                 st.markdown(f"""
                     <div style="
                     background: linear-gradient(90deg,#ff4b2b,#ff416c);
