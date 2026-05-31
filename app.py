@@ -61,9 +61,44 @@ if st.button("Check Message"):
 
     else:
 
-        prediction = model.predict([message])
+        with st.spinner("Analyzing message with AI..."):
 
-        if prediction[0] == 1:
-            st.error("Spam Message Detected")
-        else:
-            st.success("Safe Message")
+            prediction = model.predict([message])
+
+            probability = model.predict_proba([message])
+
+            confidence = round(max(probability[0]) * 100, 2)
+
+            if prediction[0] == 1:
+
+                st.markdown(f"""
+                    <div style="
+                    background: linear-gradient(90deg,#ff4b2b,#ff416c);
+                    padding:20px;
+                    border-radius:15px;
+                    color:white;
+                    font-size:24px;
+                    font-weight:bold;
+                    text-align:center;
+                    margin-top:20px;">
+                    🚨 SPAM MESSAGE<br>
+                    Confidence: {confidence}%
+                    </div>
+                    """, unsafe_allow_html=True)
+
+            else:
+
+                st.markdown(f"""
+                    <div style="
+                    background: linear-gradient(90deg,#00ff87,#60efff);
+                    padding:20px;
+                    border-radius:15px;
+                    color:black;
+                    font-size:24px;
+                    font-weight:bold;
+                    text-align:center;
+                    margin-top:20px;">
+                    ✅ SAFE MESSAGE<br>
+                    Confidence: {confidence}%
+                    </div>
+                    """, unsafe_allow_html=True)
