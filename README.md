@@ -1,10 +1,6 @@
-ShieldMail AI 🛡️
+🛡️ ShieldMail AI
 
-Advanced Spam & Phishing Email Detection System
-
-ShieldMail AI is an intelligent cybersecurity-focused email analysis system built using Python, Machine Learning, and Streamlit. It detects spam, phishing attempts, financial scams, crypto frauds, suspicious links, and malicious email patterns with real-time threat analysis and confidence scoring.
-
-Designed with a modern cyber-security dashboard interface, the system combines Machine Learning predictions with a custom rule-based threat engine for higher accuracy and explainable detection.
+Advanced AI-powered spam, phishing, and scam email detection system built with Python and Streamlit.
 
 
 ---
@@ -12,211 +8,135 @@ Designed with a modern cyber-security dashboard interface, the system combines M
 🚀 Features
 
 ✅ Spam Email Detection
-
-✅ Phishing Email Detection
-
+✅ Phishing Attack Detection
 ✅ Financial Scam Detection
-
 ✅ Crypto Scam Detection
-
-✅ Lottery Scam Detection
-
 ✅ Suspicious Link Detection
-
 ✅ Banking Fraud Detection
-
-✅ Login & Verification Scam Detection
-
-✅ Real-Time Threat Analysis
-
-✅ Confidence Score Meter
-
-✅ Hybrid AI + Rule-Based Detection
-
-✅ Modern Cybersecurity UI
-
-✅ Explainable Threat Reports
-
+✅ Login & Verification Threat Analysis
+✅ Real-Time Security Confidence Score
+✅ AI + Rule-Based Hybrid Detection
+✅ Interactive Cybersecurity Dashboard UI
 
 
 ---
 
-🧠 How It Works
-
-ShieldMail AI uses a hybrid architecture:
-
-Machine Learning Prediction
-            +
-Rule-Based Threat Analysis
-            +
-Keyword Intelligence Engine
-            +
-Real-Time Threat Reporting
-
-The system analyzes:
-
-Email text patterns
-
-Scam keywords
-
-Phishing phrases
-
-Suspicious links
-
-Financial fraud indicators
-
-Urgency-based manipulation tactics
-
-
-
----
-
-🛠️ Tech Stack
-
-Frontend
-
-Streamlit
-
-HTML/CSS Styling
-
-
-Backend
+⚡ Tech Stack
 
 Python
 
+Streamlit
 
 Machine Learning
 
 Scikit-learn
 
-TF-IDF Vectorization
+Pandas
 
-Naive Bayes / Logistic Regression
+NLP
+
+Custom Threat Engine
 
 
-Dataset Sources
 
-Enron Email Dataset
+---
 
-Spam.csv Dataset
+🧠 Detection Capabilities
+
+ShieldMail AI can identify:
+
+Phishing emails
+
+Fake banking alerts
+
+Crypto giveaway scams
+
+Lottery scams
+
+Financial fraud attempts
+
+Suspicious verification requests
+
+Malicious login prompts
+
+Unsafe links
+
+
+
+---
+
+📊 Example Threat Analysis
+
+⚠ Possible Phishing Attempt
+✓ Financial scam keywords detected
+✓ Suspicious link detected
+✓ Banking-related content detected
+✓ Login request detected
+
+
+---
+
+🖥️ Interface
+
+Modern dark-themed cybersecurity dashboard with:
+
+Real-time message scanning
+
+Security confidence scoring
+
+Threat explanation system
+
+Safe/Spam classification
+
+Interactive UI experience
+
+
+
+---
+
+📂 Datasets Used
+
+Enron Dataset
 
 Phishing Email Dataset
 
+Spam Classification Dataset
 
-
----
-
-📸 Screenshots
-
-Spam Detection
-
-Financial scam detection
-
-Crypto giveaway detection
-
-Lottery scam detection
-
-Banking phishing detection
-
-
-Safe Message Detection
-
-Normal conversation classification
-
-Office/work-related message detection
-
-
-(Add your screenshots here)
 
 
 ---
 
-📂 Project Structure
+▶️ Run Locally
 
-ShieldMailAI/
-│
-├── app.py
-├── spam.csv
-├── phishing_email.csv
-├── Enron.csv
-├── requirements.txt
-├── README.md
-└── assets/
-
-
----
-
-⚙️ Installation
-
-Clone the repository:
-
-git clone https://github.com/shivork/ShieldMailAI.git
-
-Move into the project directory:
+git clone https://github.com/Shivork/ShieldMailAI.git
 
 cd ShieldMailAI
 
-Install dependencies:
-
 pip install -r requirements.txt
-
-Run the application:
 
 streamlit run app.py
 
 
 ---
 
-🔍 Example Test Inputs
-
-Spam Example
-
-FREE Bitcoin giveaway! Send 1 BTC and get 10 BTC now!
-
-Phishing Example
-
-Your bank account will be suspended. Verify your details immediately.
-
-Safe Example
-
-Hey Shivam, let's meet tomorrow regarding the project discussion.
-
-
----
-
-📈 Future Improvements
+🌟 Future Improvements
 
 Gmail API Integration
 
 Real Inbox Scanner
 
-AI-Powered URL Reputation Analysis
+Attachment Malware Detection
 
-Email Attachment Malware Detection
+Browser Extension
 
-Deep Learning NLP Models
+Advanced NLP Models
 
-Browser Extension Version
-
-Real-Time Threat Intelligence APIs
+URL Reputation System
 
 
 
 ---
 
-🎯 Project Goal
+🔐 ShieldMail AI
 
-The goal of ShieldMail AI is to create an intelligent and explainable cybersecurity solution capable of helping users identify dangerous emails before becoming victims of phishing attacks, scams, or online fraud.
-
-
----
-
-👨‍💻 Developer
-shivork Anzin
-
-
----
-
-⭐ Support
-
-If you found this project useful, consider giving it a ⭐ on GitHub.
+Smart Email Security Powered by AI.
