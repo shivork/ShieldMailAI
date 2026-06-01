@@ -150,7 +150,7 @@ ShieldMailAI/
 
 Clone the repository:
 
-git clone https://github.com/your-username/ShieldMailAI.git
+git clone https://github.com/shivork/ShieldMailAI.git
 
 Move into the project directory:
 
