@@ -81,14 +81,26 @@ if st.button("Check Message"):
             phishing_detected = False
 
             for word in phishing_words:
-              if word.lower() in message.lower():
-                 phishing_detected = True
+                if word.lower() in message.lower():
+                  phishing_detected = True
 
             prediction = model.predict([message])
 
             probability = model.predict_proba([message])
 
             confidence = round(max(probability[0]) * 100, 2)
+            # Risk score boost
+            risk_score = 0
+
+            if suspicious_links:
+                risk_score += 30
+
+            if phishing_detected:
+                 risk_score += 25
+
+             # Increase confidence
+            confidence = min(confidence + risk_score, 100)
+
             # Risk Level Logic
             risk_level = "SAFE"
             risk_color = "green"
@@ -98,17 +110,10 @@ if st.button("Check Message"):
                 risk_color = "red"
 
             elif phishing_detected or suspicious_links:
-                    risk_level = "SUSPICIOUS"
-                    risk_color = "orange"
+                risk_level = "SUSPICIOUS"
+                risk_color = "orange"
 
             # Warning Messages
-            if suspicious_links:
-                    st.warning("⚠ Suspicious Link Detected!")
-
-            if phishing_detected:
-                st.warning("⚠ Possible Phishing Attempt!")
-
-
             if suspicious_links:
                 st.warning("⚠ Suspicious Link Detected!")
 
