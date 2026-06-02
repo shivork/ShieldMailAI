@@ -89,7 +89,7 @@ The system includes a modern dark-themed cybersecurity dashboard with:
 
 ⚡ Installation
 
-git clone https://github.com/yourusername/ShieldMailAI.git
+git clone https://github.com/shivork/ShieldMailAI.git
 
 cd ShieldMailAI
 
